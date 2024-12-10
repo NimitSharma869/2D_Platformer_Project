@@ -40,3 +40,14 @@ Tried to use state machiens to create a "DashState" and a "FreeState". DashState
 
 24th November,
 Back to using manual timers; dash works but player now affected by gravity while dashing. Uploading all progress to GitHub to all save rerolls if project assets are accidentally deleated. Created a simple Dashing animation.  
+
+
+November 25-27th
+Finally managed to make dash state work, added a dash cooldown, made it so that dash only resets after touching the ground and 0.5 seconds have passed since a dash. Dash state now has proper collition
+
+November 28-December 3rd
+Enemies now do damage, They have varaiable damage between both enemy types and enemy state at the time of damage. 
+
+Decemeber 4-12th
+Player now has an HP bar, when it depelates the game restarts. Created a UI which spawns the Camera and game settings which means a single object is all i need to wory about to include them. Player has invincability frames after taking damage. Player flashes while (created a shader for the flash) invincable. 
+Created a hurt state where player is briefly slowed and cant jump for half a second; can use dash to skip most of the slow.  
