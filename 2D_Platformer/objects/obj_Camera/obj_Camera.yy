@@ -10,8 +10,8 @@
   "name":"obj_Camera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Game_Features",
+    "path":"folders/Objects/Game_Features.yy",
   },
   "parentObjectId":null,
   "persistent":true,

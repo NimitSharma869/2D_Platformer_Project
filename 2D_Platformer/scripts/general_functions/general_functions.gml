@@ -1,3 +1,5 @@
+//this script has all controls
+
 function controlsSetup()
 {
 	bufferTime = 5;
@@ -30,7 +32,7 @@ function getControls()
 	jumpKey = keyboard_check(vk_space) + gamepad_button_check( 0, gp_face1);
 		jumpKey = clamp( jumpKey, 0, 1);
 		
-	dashKey = keyboard_check_pressed(ord("E")) + gamepad_button_check_pressed( 0, gp_shoulderr);
+	dashKey = keyboard_check_pressed(vk_shift) + gamepad_button_check_pressed( 0, gp_shoulderr);
 		dashKey = clamp( dashKey, 0, 1);
 		
 	
