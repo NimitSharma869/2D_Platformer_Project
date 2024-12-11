@@ -15,7 +15,8 @@ function player_hurt(_direction,_force,_damage){
 				flash = 0.7
 				invulnerable = 60;  
 				moveSpd = 1;
-				stun = 30;
+				stun = 20; //This seems like the sweet spot for the stun, 
+							//this will become a variable in the future
 				//moveDir = -point_direction(obj_enemy_parent.x, obj_enemy_parent.y, obj_player.x, obj_player.y);
 				//this last line is Not going to work Edit: i knew it!
 	

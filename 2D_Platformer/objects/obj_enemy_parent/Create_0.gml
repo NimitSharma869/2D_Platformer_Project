@@ -5,5 +5,6 @@ moveSpd = 2;
 grav = 0.1;
 movedir = -1;
 
+enemyHealth = 1;
 enemyDamage = 0.5;
 enemyForce = 3;

@@ -4,7 +4,7 @@ xspd = 0;
 yspd = 0;
 grav = 1;
 
-
+enemyHealth = 2;
 enemyForce = 3;
 
 state = "WAITING";
