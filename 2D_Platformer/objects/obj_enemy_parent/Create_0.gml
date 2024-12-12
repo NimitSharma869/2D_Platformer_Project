@@ -8,3 +8,5 @@ movedir = -1;
 enemyHealth = 1;
 enemyDamage = 0.5;
 enemyForce = 3;
+
+image_speed = 0;

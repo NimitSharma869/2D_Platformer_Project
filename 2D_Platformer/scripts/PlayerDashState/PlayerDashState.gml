@@ -2,12 +2,16 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerDashState(){
 
-	 //This is to make sure that we have a directional input when we dash
-	 //otherwise it always goes towards right for some reason
+
+	coyoteHangTimer = 0;
+	coyoteJumpTimer = 0;
+	//this stops player from jumping after dashing; unless double jump is enabled that is :/
 	
 	
 	if(rightKey -leftKey == 0){ //and downKey - upKey == 0){
 		state = PlayerFreeState;
+			 //This is to make sure that we have a directional input when we dash
+		//otherwise it always goes towards right for some reason
 	} else{
 		dashdirection = (rightKey -leftKey)
 		xspd = lengthdir_x(dashspd, dashdirection)*dashdirection; //for some reastion 

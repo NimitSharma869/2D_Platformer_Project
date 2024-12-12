@@ -23,6 +23,7 @@ function PlayerFreeState()
 	
 	//dash
 	if (candash) && (dashKey) && (dashcooldown) {
+		
 		candash = false;
 		dashcooldown = false;
 		coyoteHangTimer = 0;
