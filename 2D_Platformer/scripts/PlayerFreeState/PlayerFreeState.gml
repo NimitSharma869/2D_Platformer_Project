@@ -141,7 +141,12 @@ function PlayerFreeState()
 	//sprite control
 	//walking
 	
-	
+	if (attackKey) && (attackCooldown <= 0){
+		
+		attackCooldown = 90;
+		attackTimer = 60;
+		state = PlayerAttackState;
+	}
 	
 
 		//skip draw

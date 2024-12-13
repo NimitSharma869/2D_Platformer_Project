@@ -1,20 +1,37 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function PlayerHurtState(){
+function PlayerAttackState(){
+	
+	moveDir = (rightKey - leftKey);
+	moveSpd = 2.5;
+	
+	
+	
+		
+	//get my face
+	if moveDir !=0 {face = moveDir; };
+	
+	if rightKey != 0 && leftKey != 0 
+	{
+		//face = - face; //in hindsight, i should have seen this coming, but it was still hillarious
+		
+		moveDir = face; //if both left and right arrows are clicked, we continues going in the 
+						//direction we previsouly were going in
+	}
+	
+	
+	grav = 0.8;
 	
 	xspd = (moveDir * moveSpd);
 	
-	moveSpd = 1;
-	
-	moveDir = rightKey - leftKey;
-	
-	attackCooldown = 0; //if you get hit, you can instnatly attack again
-						//i will make an item which doubles attack cooldown
-						//this will make this featue pretty viable 
+	//you will need this to be done with a key press event or something to trigger it
+	if sprite_index!=spr_player_attack {
+		image_index = 0;
+		sprite_index = spr_player_attack;
+	}
 	
 	
-	//x speed	
-	xspd = (moveDir * moveSpd);
+	
 	
 	var _subPixel = 0.5;
 	if place_meeting(x + xspd, y, wall)
@@ -86,9 +103,10 @@ function PlayerHurtState(){
 		
 	}
 	
+	
 
 	//terminal speed
-		//terminal speed
+			//terminal speed
 		if yspd > termVel { yspd = termVel; };
 	
 	
@@ -106,6 +124,8 @@ function PlayerHurtState(){
 			yspd = 0;
 		} 
 	
+	
+	
 	//set if i am on the ground
 	if yspd >= 0 and place_meeting( x, y+1, wall)
 	{
@@ -118,17 +138,15 @@ function PlayerHurtState(){
 		y += yspd;
 	
 	
-	if (stun > 0)
+	if (attackTimer > 0)
 	{
-		stun --;
+		attackTimer --;	
 	} else {
 		moveSpd = 3.5;
 		state = PlayerFreeState;
 	}
 	
-	
-	
-	if (candash) && (dashKey) && (dashcooldown) {
+		if (candash) && (dashKey) && (dashcooldown) {
 		moveSpd = 3.5;
 		candash = false;
 		dashcooldown = false;
@@ -140,13 +158,4 @@ function PlayerHurtState(){
 		state =  PlayerDashState; //DashState;
 	} 
 	
-	if (attackKey) && (attackCooldown <= 0){
-		
-		moveSpd = 2.5;
-		attackCooldown = 60;
-		attackTimer = 30;
-		state = PlayerAttackState;
-	}
-	
-	
-} 
+}

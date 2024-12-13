@@ -34,7 +34,11 @@ function getControls()
 		
 	dashKey = keyboard_check_pressed(vk_shift) + gamepad_button_check_pressed( 0, gp_shoulderr);
 		dashKey = clamp( dashKey, 0, 1);
-		
+	
+	
+	attackKey = keyboard_check_pressed(ord("E"));
+		attackKey = clamp( attackKey, 0, 1);
+	
 	
 		
 	//jump key buffering

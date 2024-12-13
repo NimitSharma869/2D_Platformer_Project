@@ -66,6 +66,10 @@ knockback_speed = 0;
 gravTimer = 0;
 gravFrames = 3;
 
+//attack
+attackTimer = 0;
+attackCooldown = 0;
+
 
 
 
