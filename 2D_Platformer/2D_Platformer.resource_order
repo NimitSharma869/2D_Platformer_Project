@@ -25,6 +25,8 @@
   "ResourceOrderSettings":[
     {"name":"obj_crusher","order":2,"path":"objects/obj_crusher/obj_crusher.yy",},
     {"name":"obj_enemy_parent","order":1,"path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},
+    {"name":"obj_energy_bolt","order":9,"path":"objects/obj_energy_bolt/obj_energy_bolt.yy",},
+    {"name":"obj_energy_explosion","order":10,"path":"objects/obj_energy_explosion/obj_energy_explosion.yy",},
     {"name":"obj_game","order":1,"path":"objects/obj_game/obj_game.yy",},
     {"name":"obj_spike","order":3,"path":"objects/obj_spike/obj_spike.yy",},
     {"name":"obj_UI","order":2,"path":"objects/obj_UI/obj_UI.yy",},
@@ -39,6 +41,8 @@
     {"name":"PlayerFreeState","order":1,"path":"scripts/PlayerFreeState/PlayerFreeState.yy",},
     {"name":"PlayerHurtState","order":2,"path":"scripts/PlayerHurtState/PlayerHurtState.yy",},
     {"name":"spr_enemy_2","order":1,"path":"sprites/spr_enemy_2/spr_enemy_2.yy",},
+    {"name":"spr_enemy_explosion","order":9,"path":"sprites/spr_enemy_explosion/spr_enemy_explosion.yy",},
+    {"name":"spr_energy_bolt","order":8,"path":"sprites/spr_energy_bolt/spr_energy_bolt.yy",},
     {"name":"spr_health_empty","order":5,"path":"sprites/spr_health_empty/spr_health_empty.yy",},
     {"name":"spr_health","order":4,"path":"sprites/spr_health/spr_health.yy",},
     {"name":"spr_player_attack","order":6,"path":"sprites/spr_player_attack/spr_player_attack.yy",},

@@ -4,6 +4,7 @@ function PlayerFreeState()
 {
 	moveDir = rightKey - leftKey;
 	
+	//moveSpd = 3.5;
 		
 	//get my face
 	if moveDir !=0 {face = moveDir; };
@@ -91,6 +92,8 @@ function PlayerFreeState()
 		//tell ourself we're no longer on the ground
 		setOnGround(false);
 		coyoteJumpTimer = 0;
+		moveSpd = 3.85; //10 percent faster while jumping
+					//not VERY noticable but should make platforming a little easier 
 		
 	}
 	//cut off the jump, release the button
@@ -132,6 +135,7 @@ function PlayerFreeState()
 	{
 		setOnGround(true);	
 		candash = true;
+		moveSpd = 3.5; //lose bonus speed while not jumpingdddddddddd
 		
 	} 
 		

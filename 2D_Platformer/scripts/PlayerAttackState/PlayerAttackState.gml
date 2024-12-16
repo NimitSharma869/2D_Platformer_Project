@@ -3,9 +3,9 @@
 function PlayerAttackState(){
 	
 	moveDir = (rightKey - leftKey);
-	moveSpd = 2.5;
 	
-	
+	moveSpd = 2.5; //player slows down during attck animation, this will become a variable in the future
+					//so that player is faster while charging attacks
 	
 		
 	//get my face
@@ -147,7 +147,8 @@ function PlayerAttackState(){
 	}
 	
 		if (candash) && (dashKey) && (dashcooldown) {
-		moveSpd = 3.5;
+		moveSpd = 3.5; //i forgot this, and was confused by my slower speed when i
+						//animation cancled the attack
 		candash = false;
 		dashcooldown = false;
 		coyoteHangTimer = 0;
