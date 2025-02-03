@@ -13,6 +13,7 @@ state();
 		attackCooldown --;
 	}
 	
+//dash cooldown	
+if alarm[0] <= 0 {dashcooldown = true;} //bugfix
 	
-	
-	
+if alarm[1] <= 0 {attackCooldown = true;} 

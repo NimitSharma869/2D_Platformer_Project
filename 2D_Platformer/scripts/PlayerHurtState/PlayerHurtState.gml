@@ -8,7 +8,7 @@ function PlayerHurtState(){
 	
 	moveDir = rightKey - leftKey;
 	
-	attackCooldown = 0; //if you get hit, you can instnatly attack again
+	attackCooldown = false; //if you get hit, you can instnatly attack again
 						//i will make an item which doubles attack cooldown
 						//this will make this featue pretty viable 
 	
@@ -129,7 +129,7 @@ function PlayerHurtState(){
 	
 	
 	if (candash) && (dashKey) && (dashcooldown) {
-		moveSpd = 3.5;
+		
 		candash = false;
 		dashcooldown = false;
 		coyoteHangTimer = 0;
@@ -142,7 +142,7 @@ function PlayerHurtState(){
 	
 	if (attackKey) && (attackCooldown <= 0){
 		
-		moveSpd = 2.5;
+		
 		attackCooldown = 60;
 		attackTimer = 30;
 		state = PlayerAttackState;

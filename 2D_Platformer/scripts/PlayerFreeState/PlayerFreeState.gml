@@ -4,7 +4,8 @@ function PlayerFreeState()
 {
 	moveDir = rightKey - leftKey;
 	
-	//moveSpd = 3.5;
+	canAttack = true;
+	
 		
 	//get my face
 	if moveDir !=0 {face = moveDir; };
@@ -23,16 +24,18 @@ function PlayerFreeState()
 	xspd = clamp(xspd, -15, 15)
 	
 	//dash
+	
+	
 	if (candash) && (dashKey) && (dashcooldown) {
 		
 		candash = false;
 		dashcooldown = false;
 		coyoteHangTimer = 0;
 		coyoteJumpTimer = 0;
-		dashdirection = (rightKey -leftKey); //point_direction(0,0, rightKey -leftKey, downKey - upKey);
+		//dashdirection = (rightKey -leftKey); already defined 
 		dashspd = dashdistance/dashtime;
 		dashenergy = dashdistance;
-		state =  PlayerDashState; //DashState;
+		state =  PlayerDashState;
 	} 
 
 		
@@ -145,11 +148,17 @@ function PlayerFreeState()
 	//sprite control
 	//walking
 	
-	if (attackKey) && (attackCooldown <= 0){
+	if (attackKey) && (attackCooldown){
 		
-		attackCooldown = 90;
-		attackTimer = 60;
-		state = PlayerAttackState;
+		
+		attackCooldown = false;
+		attackTimer = 15;
+		//state = PlayerAttackState;
+			alarm[1] = 3*game_get_speed(gamespeed_fps);
+	
+		var _inst = instance_create_layer(x,y, "Bolt", obj_energy_bolt)
+	
+		
 	}
 	
 

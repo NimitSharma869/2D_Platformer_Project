@@ -8,20 +8,18 @@ function PlayerDashState(){
 	//this stops player from jumping after dashing; unless double jump is enabled that is :/
 	
 	
-	if(rightKey -leftKey == 0){ //and downKey - upKey == 0){
-		state = PlayerFreeState;
-			 //This is to make sure that we have a directional input when we dash
-		//otherwise it always goes towards right for some reason
+	if(rightKey -leftKey == 0)
+	{ 
+		dashdirection = face;	//if no directional input/both keys are pressed,dash in the direction we are facing 
 	} else{
 		dashdirection = (rightKey -leftKey)
-		xspd = lengthdir_x(dashspd, dashdirection)*dashdirection; //for some reastion 
-		yspd = 0 //lengthdir_y(dashspd, dashdirection);
-		//if(rightKey -leftKey == 0) {
-			//sprite_index = spr_player_rising;//placeholder; this is so that we dont get a wierd
-			//dash when going up Edit: only x axis dash allowed
-		//else 
-		sprite_index = spr_player_dash;
 	}
+	
+	xspd = lengthdir_x(dashspd, dashdirection)*dashdirection; 
+	yspd = 0;
+	
+	sprite_index = spr_player_dash;
+	
 	
 	
 	//dash cooldown

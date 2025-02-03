@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description dashcooldown
 // You can write your code in this editor
 
-dashcooldown = true;
+//dashcooldown = true;

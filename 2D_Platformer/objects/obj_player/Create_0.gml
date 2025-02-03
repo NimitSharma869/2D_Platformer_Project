@@ -68,8 +68,8 @@ gravFrames = 3;
 
 //attack
 attackTimer = 0;
-attackCooldown = 0;
 
+attackCooldown = true;
 
 
 

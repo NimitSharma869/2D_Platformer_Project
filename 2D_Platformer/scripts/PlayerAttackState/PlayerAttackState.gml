@@ -2,12 +2,27 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerAttackState(){
 	
+	alarm[1] = 3*game_get_speed(gamespeed_fps);
+	
+	
+	var _dir = face;
+	
+	var _inst = instance_create_layer(x,y, "Bolt", obj_energy_bolt)
+	with(_inst)
+	{
+		speed = obj_energy_bolt.boltSpeed;
+		direction = _dir;
+	}
+	
+	
+	
 	moveDir = (rightKey - leftKey);
 	
-	moveSpd = 2.5; //player slows down during attck animation, this will become a variable in the future
+	//moveSpd = 2.5; //player slows down during attck animation, this will become a variable in the future
 					//so that player is faster while charging attacks
 	
-		
+	moveSpd = 3.5;
+	
 	//get my face
 	if moveDir !=0 {face = moveDir; };
 	
@@ -24,13 +39,13 @@ function PlayerAttackState(){
 	
 	xspd = (moveDir * moveSpd);
 	
-	//you will need this to be done with a key press event or something to trigger it
+	/*you will need this to be done with a key press event or something to trigger it
 	if sprite_index!=spr_player_attack {
 		image_index = 0;
 		sprite_index = spr_player_attack;
 	}
 	
-	
+	*/
 	
 	
 	var _subPixel = 0.5;
@@ -138,16 +153,24 @@ function PlayerAttackState(){
 		y += yspd;
 	
 	
+	
 	if (attackTimer > 0)
 	{
 		attackTimer --;	
 	} else {
-		moveSpd = 3.5;
+		moveSpd = 3.5;	
 		state = PlayerFreeState;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 		if (candash) && (dashKey) && (dashcooldown) {
-		moveSpd = 3.5; //i forgot this, and was confused by my slower speed when i
+		//moveSpd = 3.5; //i forgot this, and was confused by my slower speed when i
 						//animation cancled the attack
 		candash = false;
 		dashcooldown = false;
