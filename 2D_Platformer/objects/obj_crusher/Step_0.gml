@@ -60,4 +60,10 @@ switch (state) {
 				
 }
 
+if hp <= 0
+{
+	instance_destroy();
+}
+
+
 move_script();

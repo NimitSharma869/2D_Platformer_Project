@@ -10,3 +10,5 @@ enemyForce = 3;
 state = "WAITING";
 
 image_speed = 0;
+
+hp = 2;

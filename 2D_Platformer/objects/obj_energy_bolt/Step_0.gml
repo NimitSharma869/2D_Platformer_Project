@@ -6,6 +6,6 @@ var _distance = point_distance(xstart, ystart, x, y);
 
 if _distance > boltRange 
 {
-	bolt_die();
+	instance_destroy();
 }
 

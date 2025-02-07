@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_game",
+  "%Name":"obi_room_change_next",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":71,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_game",
+  "name":"obi_room_change_next",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game_Features",
-    "path":"folders/Objects/Game_Features.yy",
+    "name":"Terrain_objects",
+    "path":"folders/Objects/Terrain_objects.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_room_change",
+    "path":"sprites/spr_room_change/spr_room_change.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

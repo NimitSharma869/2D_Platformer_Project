@@ -2,18 +2,26 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerAttackState(){
 	
-	alarm[1] = 3*game_get_speed(gamespeed_fps);
+	alarm[1] = 2*game_get_speed(gamespeed_fps);
 	
 	
-	var _dir = face;
+	if moveDir !=0 {face = moveDir; };
 	
-	var _inst = instance_create_layer(x,y, "Bolt", obj_energy_bolt)
-	with(_inst)
+	if rightKey != 0 && leftKey != 0 
 	{
-		speed = obj_energy_bolt.boltSpeed;
-		direction = _dir;
+		//face = - face; //in hindsight, i should have seen this coming, but it was still hillarious
+		
+		moveDir = face; //if both left and right arrows are clicked, we continues going in the 
+						//direction we previsouly were going in
 	}
 	
+	
+	
+	
+	var _dir = face
+
+	
+	//var _inst = instance_create_layer(x,y, "Bolt", obj_energy_bolt)
 	
 	
 	moveDir = (rightKey - leftKey);
@@ -39,13 +47,13 @@ function PlayerAttackState(){
 	
 	xspd = (moveDir * moveSpd);
 	
-	/*you will need this to be done with a key press event or something to trigger it
+	//you will need this to be done with a key press event or something to trigger it
 	if sprite_index!=spr_player_attack {
 		image_index = 0;
 		sprite_index = spr_player_attack;
 	}
 	
-	*/
+	
 	
 	
 	var _subPixel = 0.5;
@@ -160,9 +168,15 @@ function PlayerAttackState(){
 	} else {
 		moveSpd = 3.5;	
 		state = PlayerFreeState;
+		
+		var _inst = instance_create_layer(obj_player.x,obj_player.y+10, "Bolt", obj_energy_bolt)
+		with(_inst)
+		{
+			speed = obj_energy_bolt.boltSpeed*_dir;
+			//direction = _dir
+		}
+		
 	}
-	
-	
 	
 	
 	

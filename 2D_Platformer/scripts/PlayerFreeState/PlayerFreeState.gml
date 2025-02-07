@@ -6,6 +6,8 @@ function PlayerFreeState()
 	
 	canAttack = true;
 	
+
+	
 		
 	//get my face
 	if moveDir !=0 {face = moveDir; };
@@ -17,6 +19,19 @@ function PlayerFreeState()
 		moveDir = face; //if both left and right arrows are clicked, we continues going in the 
 						//direction we previsouly were going in
 	}
+	
+	
+	
+	if(rightKey -leftKey == 0)
+	{ 
+		boltdirection = face;	//if no directional input/both keys are pressed,dash in the direction we are facing 
+	} else{
+		boltdirection = (rightKey -leftKey);
+	}
+	
+	
+	
+	
 		
 	//x speed	
 	xspd = (moveDir * moveSpd);
@@ -150,13 +165,13 @@ function PlayerFreeState()
 	
 	if (attackKey) && (attackCooldown){
 		
-		
+		boltdirection = (rightKey -leftKey);
 		attackCooldown = false;
-		attackTimer = 15;
-		//state = PlayerAttackState;
+		attackTimer = 30;
+		state = PlayerAttackState;
 			alarm[1] = 3*game_get_speed(gamespeed_fps);
 	
-		var _inst = instance_create_layer(x,y, "Bolt", obj_energy_bolt)
+		
 	
 		
 	}
